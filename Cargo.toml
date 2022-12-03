@@ -1,0 +1,10 @@
+[package]
+name = "bdrk_geometry"
+authors = ["Tucker hawkinson <public@hawkinson.dev>"]
+version = "0.0.1"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Geometry Helpers"
+repository = "https://github.com/bedrock-rs/geometry"
+
+[dependencies]
