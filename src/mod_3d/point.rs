@@ -6,7 +6,7 @@
 //!
 //! This module contains basic methods to manipulate a 3D point
 
-/// Generic 2D Point
+/// Generic 3D Point
 ///
 /// Can be used with [`f32`] or [`f64`]
 ///
