@@ -2,6 +2,17 @@
 //!
 //! This module contains basic methods to manipulate a 2D point
 
+/// Generic 2D Point
+///
+/// Can be used with [`f32`] or [`f64`]
+///
+/// # Examples
+///
+/// ```no_run
+/// use bdrk_geometry::mod_2d::Point2D;
+///
+/// let new_point = Point2D::new(0, 0);
+/// ```
 #[derive(Debug, Default)]
 pub struct Point2D<T> {
     x: T,

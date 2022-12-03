@@ -1,3 +1,7 @@
+//! 3D Geometry
+//!
+//! This module contains basic methods to manipulate 3D Geometry
+
 mod point;
 mod line;
 
