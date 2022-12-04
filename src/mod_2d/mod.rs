@@ -12,3 +12,5 @@ pub use line::Line2D;
 pub use circle::Circle2D;
 
 pub use shape::HasArea;
+pub use shape::HasPerimeter;
+pub use shape::ContainsPoint;

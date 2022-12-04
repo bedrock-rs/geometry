@@ -1,5 +1,6 @@
 use std::f32::consts::PI;
 use crate::mod_2d::{HasArea, Point2D};
+use crate::mod_2d::shape::{ContainsPoint, HasPerimeter};
 
 /// Generic 2D Circle
 pub struct Circle2D {
@@ -106,6 +107,22 @@ impl HasArea for Circle2D {
     }
 }
 
+impl HasPerimeter for Circle2D {
+    /// Gets perimeter of circle
+    fn perimeter(&self) -> f32 {
+        2f32 * PI * self.radius
+    }
+}
+
+impl ContainsPoint for Circle2D {
+    /// Does circle contain point
+    fn contains(&self, other: &Point2D) -> bool {
+        let distance_to_center = self.center.distance_to(other);
+
+        distance_to_center <= self.radius
+    }
+}
+
 
 #[cfg(test)]
 mod tests {
@@ -121,5 +138,31 @@ mod tests {
         let new_circle = Circle2D::new(center_point, radius);
 
         assert_eq!(new_circle.area(), PI * radius.powi(2));
+    }
+
+    #[test]
+    fn perimeter() {
+        use std::f32::consts::PI;
+
+        let center_point = Point2D::new(0f32, 0f32);
+        let radius = 1f32;
+
+        let new_circle = Circle2D::new(center_point, radius);
+
+        assert_eq!(new_circle.perimeter(), 2f32 * PI * radius);
+    }
+
+    #[test]
+    fn contains() {
+        let center_point = Point2D::new(0f32, 0f32);
+        let radius = 1f32;
+
+        let new_circle = Circle2D::new(center_point, radius);
+
+        let target_one = Point2D::new(0.5, 0.25);
+        let target_two = Point2D::new(5f32, 10f32);
+
+        assert_eq!(new_circle.contains(&target_one), true);
+        assert_eq!(new_circle.contains(&target_two), false);
     }
 }
