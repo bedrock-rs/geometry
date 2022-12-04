@@ -2,54 +2,127 @@
 //!
 //! This module contains basic methods to manipulate a 3D point
 
-//! 3D Point
-//!
-//! This module contains basic methods to manipulate a 3D point
-
 /// Generic 3D Point
-///
-/// Can be used with [`f32`] or [`f64`]
-///
-/// # Examples
-///
-/// ```no_run
-/// use bdrk_geometry::mod_3d::Point3D;
-///
-/// let new_point = Point3D::new(0, 0, 0);
-/// ```
 #[derive(Debug, Default)]
-pub struct Point3D<T> {
-    x: T,
-    y: T,
-    z: T
+pub struct Point3D {
+    x: f32,
+    y: f32,
+    z: f32
 }
 
-impl<T> Point3D<T> {
-    pub fn new(x: T, y: T, z: T) -> Self {
+impl Point3D {
+    /// Create Generic 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// assert_eq!(new_point.x(), &0f32);
+    /// assert_eq!(new_point.y(), &0f32);
+    /// assert_eq!(new_point.z(), &0f32);
+    /// ```
+    pub fn new(x: f32, y: f32, z: f32) -> Self {
         Point3D { x, y, z }
     }
 
-    pub fn x(&self) -> &T {
+    /// Gets X coordinate reference of 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// assert_eq!(new_point.x(), &0f32);
+    /// ```
+    pub fn x(&self) -> &f32 {
         &self.x
     }
 
-    pub fn y(&self) -> &T {
+    /// Gets Y coordinate reference of 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// assert_eq!(new_point.y(), &0f32);
+    /// ```
+    pub fn y(&self) -> &f32 {
         &self.y
     }
 
-    pub fn z(&self) -> &T {
+    /// Gets Z coordinate reference of 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// assert_eq!(new_point.z(), &0f32);
+    /// ```
+    pub fn z(&self) -> &f32 {
         &self.z
     }
 
-    pub fn x_mut(&mut self) -> &mut T {
+    /// Gets mutable X coordinate reference of 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let mut new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// *new_point.x_mut() = 2f32;
+    ///
+    /// assert_eq!(new_point.x(), &2f32);
+    /// ```
+    pub fn x_mut(&mut self) -> &mut f32 {
         &mut self.x
     }
 
-    pub fn y_mut(&mut self) -> &mut T {
+
+    /// Gets mutable Y coordinate reference of 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let mut new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// *new_point.y_mut() = 2f32;
+    ///
+    /// assert_eq!(new_point.y(), &2f32);
+    /// ```
+    pub fn y_mut(&mut self) -> &mut f32 {
         &mut self.y
     }
 
-    pub fn z_mut(&mut self) -> &mut T {
+
+    /// Gets mutable Z coordinate reference of 3D Point
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use bdrk_geometry::mod_3d::Point3D;
+    ///
+    /// let mut new_point = Point3D::new(0f32, 0f32, 0f32);
+    ///
+    /// *new_point.z_mut() = 2f32;
+    ///
+    /// assert_eq!(new_point.z(), &2f32);
+    /// ```
+    pub fn z_mut(&mut self) -> &mut f32 {
         &mut self.z
     }
 }

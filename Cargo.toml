@@ -8,4 +8,3 @@ description = "Geometry Helpers"
 repository = "https://github.com/bedrock-rs/geometry"
 
 [dependencies]
-num-traits = "0.2.15"
